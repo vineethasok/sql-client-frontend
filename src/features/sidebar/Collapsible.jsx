@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchTableColumns } from "./tableAPI";
 
 export default function Collapsible({ title, contents=[], contentFetched }) {
@@ -35,8 +35,6 @@ export default function Collapsible({ title, contents=[], contentFetched }) {
     }
   `
 
-  //let contents = useSelector(state => state.tables[title].columns) || []
-  //let contentFetched = useSelector(state => state.tables[title].fetchedColumns)
   const openCollapsible = (event) => {
     setCollapse(!collapse)
     if(!contentFetched) {
